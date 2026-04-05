@@ -1,115 +1,988 @@
-<!DOCTYPE HTML>
-<!--
-	Full Motion by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
-	<head>
-		<title>Hypixel-Land</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body id="top">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional AI Web Development - Duskera</title>
+    <style>
+        /* --- General Styles & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-			<!-- Banner -->
-			<!--
-				To use a video as your background, set data-video to the name of your video without
-				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
-				formats to work correctly.
-			-->
-				<section id="banner" data-video="images/banner">
-					<div class="inner">
-						<header>
-							<h1>Hypixel-Land</h1>
-							<p>This is new website where u can get free ranks on hypixel<br />
-							Join our discord server and we will add more rewards in future.</p>
-						</header>
-						<a href="#main" class="more">Learn More</a>
-					</div>
-				</section>
+        :root {
+            --bg-color: #000;
+            --card-bg-color: #0b0b0b; /* Slightly lighter than black for depth */
+            --text-color: #fff;
+            --primary-accent: #a855f7; /* Neon Purple */
+            --accent-glow: #9333ea; /* Glow color */
+            --transition: all 0.3s ease;
+        }
 
-			<!-- Main -->
-				<div id="main">
-					<div class="inner">
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(168, 85, 247, 0.05) 15px, rgba(168, 85, 247, 0.05) 16px);
+        }
 
-					<!-- Boxes -->
-						<div class="thumbnails">
+        h1, h2, h3 { font-weight: 700; color: #fff; }
+        p { color: #d1d5db; font-size: 1rem; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
 
-							<div class="box">
-								<a href="discord.gg/woolwars" class="image fit"><img src="images/pic01.jpeg" alt="" /></a>
-								<div class="inner">
-									<h3>Discord server</h3>
-									<p>This is our official discord server.</p>
-							                <button type="button" oneclick="location.href='https://www.youtube.com'">Go to link</button>
-								</div>
-							</div>
+        /* Container for content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
 
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://discord.gg/woolwars" class="button style3 fit" data-poptrox="discord,800x400">Watch</a>
-								</div>
-							</div>
+        /* --- Global Glow Elements --- */
+        .glow {
+            filter: drop-shadow(0 0 10px var(--accent-glow)) drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
+        }
 
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style2 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
+        /* --- Header / Navigation --- */
+        header {
+            background-color: transparent;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1000px;
+            z-index: 1000;
+        }
 
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button style3 fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
+        .nav-container {
+            background-color: rgba(11, 11, 11, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
 
-							<div class="box">
-								<a href="https://youtu.be/s6zR2T9vn2c" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>Nascetur nunc varius commodo</h3>
-									<p>Interdum amet accumsan placerat commodo ut amet aliquam blandit nunc tempor lobortis nunc non. Mi accumsan.</p>
-									<a href="https://youtu.be/s6zR2T9vn2c" class="button fit" data-poptrox="youtube,800x400">Watch</a>
-								</div>
-							</div>
+.logo {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Space between the image and the text */
+            text-decoration: none;
+            color: #fff;
+        }
 
-						</div>
+        .logo-img {
+            height: 40px; /* Adjust this number to make the logo bigger or smaller */
+            width: auto;  /* Keeps the logo from stretching out of shape */
+            border-radius: 50%; /* Optional: Keeps it circular if your image is square */
+        }
 
-					</div>
-				</div>
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
 
-			<!-- Footer -->
-				<footer id="footer">
-					<div class="inner">
-						<h2>Etiam veroeros lorem</h2>
-						<p>Pellentesque eleifend malesuada efficitur. Curabitur volutpat dui mi, ac imperdiet dolor tincidunt nec. Ut erat lectus, dictum sit amet lectus a, aliquet rutrum mauris. Etiam nec lectus hendrerit, consectetur risus viverra, iaculis orci. Phasellus eu nibh ut mi luctus auctor. Donec sit amet dolor in diam feugiat venenatis. </p>
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fff 0%, var(--primary-accent) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #000;
+        }
 
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<p class="copyright">&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>. Videos: <a href="http://coverr.co/">Coverr</a>.</p>
-					</div>
-				</footer>
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .nav-links li a {
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
 
-	</body>
+        .nav-links li a:hover {
+            color: var(--primary-accent);
+        }
+
+        .nav-links li a.active {
+            background-color: rgba(168, 85, 247, 0.2);
+            border: 1px solid var(--primary-accent);
+            color: #fff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-icon { color: #fff; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-accent);
+            color: #000;
+        }
+
+        .btn-secondary {
+            background-color: #111;
+            color: #fff;
+            border: 1px solid #333;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-accent);
+        }
+
+/* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* This centers items horizontally in a column flexbox */
+            text-align: center;  /* This centers the text within the elements */
+            padding-top: 120px;
+            padding-bottom: 100px;
+            position: relative;
+        }
+
+
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--accent-glow);
+            filter: blur(150px);
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .hero::before { top: 10%; left: -10%; }
+        .hero::after { bottom: 10%; right: -10%; }
+
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            max-width: 800px;
+            /* Ensure no auto margins are pushing it left or right */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin-bottom: 45px;
+            color: #d1d5db;
+            /* Ensure no auto margins are pushing it left or right */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center; /* This explicitly centers the buttons */
+            width: 100%;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* --- General Section Header --- */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 100px auto 70px auto;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .section-header p { font-size: 1.1rem; }
+
+        /* --- Services Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg-color);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-accent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .service-card:hover::after { opacity: 1; }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary-accent);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background-color: #fff; /* Placeholder image */
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 60px; /* Force minimum height */
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            background-color: rgba(168, 85, 247, 0.15);
+            color: var(--primary-accent);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            font-size: 0.75rem;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            font-size: 0.9rem;
+            color: var(--primary-accent);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- Experience Section --- */
+        .journey-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #111, var(--primary-accent), #111);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: var(--primary-accent);
+            border: 5px solid #000;
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            color: #777;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .company { color: var(--primary-accent); }
+
+        .timeline-list {
+            list-style: circle;
+            padding-left: 20px;
+            color: #d1d5db;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        /* --- Pricing Section --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 80px;
+        }
+
+        .pricing-card {
+            background-color: var(--card-bg-color);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            border: 1px solid #1a1a1a;
+            transition: var(--transition);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+        }
+
+        .price-row {
+            margin: 20px 0;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .price-desc {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            margin-top: 30px;
+            color: #d1d5db;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .check-icon {
+            color: var(--primary-accent);
+        }
+
+        /* Highlight the center professional card */
+        .pricing-card.professional {
+            border: 2px solid var(--primary-accent);
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(168, 85, 247, 0.2);
+        }
+
+        /* Adjust the Get Started button in highlighted card */
+        .pricing-card.professional .pricing-btn {
+            background-color: var(--primary-accent);
+            color: #000;
+        }
+
+        /* Gray button for others */
+        .pricing-btn {
+            margin-top: 40px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* --- Reviews Section --- */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .review-card {
+            background-color: var(--card-bg-color);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff; /* Placeholder */
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .client-company {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .review-text {
+            color: #d1d5db;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        /* --- Contact / Footer Section --- */
+        .work-together {
+            text-align: center;
+            margin-top: 150px;
+            margin-bottom: 80px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 60px auto;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            border: 1px solid #1a1a1a;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-accent);
+        }
+
+        .contact-value {
+            font-weight: 600;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            color: #777;
+            font-size: 1.25rem;
+            margin-bottom: 60px;
+        }
+
+        .social-row a:hover { color: var(--primary-accent); }
+
+        .footer-base {
+            border-top: 1px solid #1a1a1a;
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .policy-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* --- Responsive Queries (Simplified) --- */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 3rem; }
+            .section-header h2 { font-size: 2.5rem; }
+            .services-grid, .pricing-grid, .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-container { padding: 10px; }
+            .nav-links { display: none; } /* Basic hides nav on mobile */
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: #777;
+            font-size: 0.85rem;
+            left: 50%; /* Center the whole block */
+            transform: translateX(-50%); /* Center the whole block */
+        }
+
+        /* The bouncing animation definition */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px); /* Move up */
+            }
+            60% {
+                transform: translateY(-5px); /* Move up slightly less */
+            }
+        }
+
+        /* Apply the animation to the arrow */
+        .bounce-arrow {
+            display: inline-block; /* Required for transform to work */
+            font-size: 1.2rem;
+            animation: bounce 2s infinite; /* 2-second animation, repeats forever */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Vortex Studio" class="logo-img">
+                <span class="logo-text">Vortex</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="btn btn-primary glow">Let's Talk →</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="glow">Premium Minecraft Development</h1>
+            <p>I build high-performance custom plugins, flawless server setups, and integrated Discord bots. Elevate your network with optimized code, reliable database structures, and unique gameplay mechanics.</p>
+            <div class="hero-btns">
+                <button class="btn btn-primary glow">View My Work →</button>
+                <button class="btn btn-secondary">Contact Me</button>
+            </div>
+        </div>
+        <div class="scroll-down">
+            Scroll Down
+            <span class="bounce-arrow">↓</span>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Elevating Your Minecraft Network</h2>
+                <p>I offer a range of specialized services focused on custom plugin development, server configuration, and community integration to help your server stand out and thrive.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon glow">⚙️</div>
+                    <h3>Custom Plugins</h3>
+                    <p>Tailor-made Spigot and Paper plugins designed for optimal performance, featuring custom gamemodes, unique items, and complex mechanics.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon glow">🏰</div>
+                    <h3>Full Server Setups</h3>
+                    <p>Complete, ready-to-launch server gamemodes including Survival, Skyblock, and KOTH, complete with configured economies and customized features.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon glow">⚡</div>
+                    <h3>Optimization & Config</h3>
+                    <p>Advanced server tuning, TPS optimization, and complex YAML/JSON configuration for essential network plugins like LuckPerms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon glow">🗨</div>
+                    <h3>Discord Integration</h3>
+                    <p>Custom Node.js Discord bots that seamlessly bridge your Minecraft server and community, featuring live stats, syncing, and automated moderation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Resources</h2>
+                <p>Explore some of my premium plugins, configurations, and world builds available for purchase on BuiltByBit.</p>
+            </div>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://builtbybit.com/attachments/vortebounty-png.1257925/?preset=fullr1'); background-size: cover; background-position: center;"></div>
+                    <h3>Vortex Bounty</h3>
+                    <p>A high-performance, feature-rich bounty management system. Put a head price on your enemies, kill, and get paid. Perfect for modern Paper servers with competitive gameplay.</p>
+                    <div class="tag-container">
+                        <span class="tag">Spigot Plugin</span>
+                        <span class="tag">PvP</span>
+                        <span class="tag">Economy</span>
+                    </div>
+                    <a href="https://builtbybit.com/resources/vortex-bounty.99952/" target="_blank" class="project-link">View on BuiltByBit →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://builtbybit.com/attachments/1-png.1268659/?preset=fullr1'); background-size: cover; background-position: center;"></div>
+                    <h3>VxKoth Ultimate</h3>
+                    <p>An advanced KOTH (King of the Hill) plugin for managing multiple arenas with configurable timers, automated schedules, and clean in-game GUIs.</p>
+                    <div class="tag-container">
+                        <span class="tag">Spigot Plugin</span>
+                        <span class="tag">Events</span>
+                        <span class="tag">Configuration</span>
+                    </div>
+                    <a href="https://builtbybit.com/resources/vxkoth-ultimate-plugin.101196/" target="_blank" class="project-link">View on BuiltByBit →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://builtbybit.com/attachments/gemini_generated_image_or12kior12kior12-jpg.1206515/?preset=fullr1'); background-size: cover; background-position: center;"></div>
+                    <h3>Tropical and Pirate Spawn</h3>
+                    <p>A massive 450x450 tropical pirate map built in the water. High-quality schematic build perfectly suited for your server's main spawn or hub.</p>
+                    <div class="tag-container">
+                        <span class="tag">Minecraft Build</span>
+                        <span class="tag">Schematic</span>
+                        <span class="tag">Spawn</span>
+                    </div>
+                    <a href="https://builtbybit.com/resources/tropical-and-pirate-spawn-450x450.94173/" target="_blank" class="project-link">View on BuiltByBit →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://builtbybit.com/attachments/admin-jpg.1203787/?preset=fullr1'); background-size: cover; background-position: center;"></div>
+                    <h3>Admin Panel GUI</h3>
+                    <p>An all-in-one moderation and management dashboard built directly into Minecraft. Manage players, server settings, and economies from a single, clean menu.</p>
+                    <div class="tag-container">
+                        <span class="tag">GUI Menus</span>
+                        <span class="tag">Moderation</span>
+                        <span class="tag">YAML Config</span>
+                    </div>
+                    <a href="https://builtbybit.com/resources/admin-panel-gui.65364/" target="_blank" class="project-link">View on BuiltByBit →</a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('https://builtbybit.com/attachments/config-2-copy-png.1273418/?preset=fullr1'); background-size: cover; background-position: center;"></div>
+                    <h3>Advanced Team Menu</h3>
+                    <p>A highly interactive and customizable GUI for players to manage their teams, invite members, check statistics, and handle upgrades seamlessly.</p>
+                    <div class="tag-container">
+                        <span class="tag">Custom Logic</span>
+                        <span class="tag">GUI Menus</span>
+                        <span class="tag">Player Stats</span>
+                    </div>
+                    <a href="https://builtbybit.com/resources/team-menu.64009/" target="_blank" class="project-link">View on BuiltByBit →</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+<section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Development Journey</h2>
+                <p>A timeline of my experience in Minecraft plugin development, server setups, and community integrations.</p>
+            </div>
+            <div class="journey-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Lead Plugin Developer <span class="company">Vortex Studio</span></h3>
+                        <p>Leading the development of premium, high-performance Minecraft plugins including VxKoth, VortexBounty, and Outpost. Specializing in 24/7 active gamemodes, custom logic, and reliable server-side solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>Freelance Creator & Bot Dev <span class="company">BuiltByBit</span></h3>
+                        <p>Created and distributed custom server setups, map configurations, and digital products. Developed custom Node.js Discord bots to seamlessly bridge in-game events with community servers.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2022 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Server Setup & Configurator <span class="company">Various Networks</span></h3>
+                        <p>Managed technical setups for community servers. Handled complex YAML/JSON configurations, optimized server performance, managed SQL databases, and structured advanced LuckPerms hierarchies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Development Rates</h2>
+                <p>Transparent pricing options designed to accommodate different server needs, from quick fixes to full network launches.</p>
+            </div>
+            <div class="pricing-grid">
+                
+                <div class="pricing-card">
+                    <h3>Configuration</h3>
+                    <p class="price-desc">Perfect for getting complex plugins running smoothly</p>
+                    <div class="price-row"><span class="price">$5+</span></div>
+                    <ul class="feature-list">
+                        <li class="feature-item"><span class="check-icon">✓</span> Advanced YAML/JSON editing</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Permissions setup (LuckPerms)</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Custom language/message files</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Economy balancing tweaks</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> 1 revision round</li>
+                    </ul>
+                    <button class="btn btn-secondary pricing-btn">Get Started</button>
+                </div>
+
+                <div class="pricing-card professional">
+                    <h3>Full Server Setup</h3>
+                    <p class="price-desc">Complete gamemode foundation ready for launch</p>
+                    <div class="price-row"><span class="price">$60+</span></div>
+                    <ul class="feature-list">
+                        <li class="feature-item"><span class="check-icon">✓</span> Complete gamemode (Survival, KOTH, etc.)</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Map implementation & region setup</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Rank & permission hierarchy</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Custom Discord bot integration</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Server performance & TPS tuning</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Custom server graphics/branding setup</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Dedicated launch support</li>
+                    </ul>
+                    <button class="btn btn-primary glow pricing-btn">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Custom Plugin</h3>
+                    <p class="price-desc">Tailor-made features for your unique server needs</p>
+                    <div class="price-row"><span class="price">$10+</span></div>
+                    <ul class="feature-list">
+                        <li class="feature-item"><span class="check-icon">✓</span> Spigot/Paper API development</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Custom commands & GUI menus</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Database integration (MySQL/SQLite)</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Clean, optimized, lag-free code</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> 1 month of bug support</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Source code available (Additional fee)</li>
+                        <li class="feature-item"><span class="check-icon">✓</span> Unlimited minor revisions</li>
+                    </ul>
+                    <button class="btn btn-secondary pricing-btn">Get Started</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Server Owner Feedback</h2>
+                <p>Hear what network owners and community managers have to say about my development work.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://minotar.net/helm/Notch/100.png');"></div>
+                        <div>
+                            <div class="client-name">PvP_Master99</div>
+                            <div class="client-company">BattleCraft Network</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"The custom KOTH plugin they developed for us runs flawlessly 24/7 without a single hitch. The performance optimization is insane, and the players love the new capture mechanics and bounty systems!"</p>
+                </div>
+                <div class="review-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://minotar.net/helm/Jeb_/100.png');"></div>
+                        <div>
+                            <div class="client-name">AdminAlex</div>
+                            <div class="client-company">GuildCraft SMP</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"They completely revamped our server's community management with a custom Discord bot linked directly to our Minecraft server. The integration is seamless and the Node.js backend is incredibly stable."</p>
+                </div>
+                <div class="review-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://minotar.net/helm/Dinnerbone/100.png');"></div>
+                        <div>
+                            <div class="client-name">MapMakerPro</div>
+                            <div class="client-company">Block Builders Co.</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"I purchased one of their survival setups off BuiltByBit and it was ready to go right out of the box. The configuration was top-tier, and the custom pirate-themed spawn layout was exactly what we needed."</p>
+                </div>
+                <div class="review-card">
+                    <div class="client-info">
+                        <div class="client-avatar" style="background-image: url('https://minotar.net/helm/Grian/100.png');"></div>
+                        <div>
+                            <div class="client-name">ServerOwnerSteve</div>
+                            <div class="client-company">EliteRealms</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Working with Vortex Studio has been a game-changer for our network. From complex SQL database integrations for our economy to custom gameplay features, their code is always clean and bug-free."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="work-together">
+                <h2>Let's Work Together</h2>
+                <p>Have a project in mind? Reach out through any of these channels and I'll get back to you promptly.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon glow">✉</div>
+                    <div class="contact-title">Email</div>
+                    <div class="contact-value">andrejbolevicpaypal@gmail.com</div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon glow">🗨</div>
+                    <div class="contact-title">Discord</div>
+                    <div class="contact-value">squixx</div>
+                </div>
+            </div>
+            <div class="footer-base">
+                <div class="logo">
+                </div>
+                <div class="policy-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all sections and the footer
+            const sections = document.querySelectorAll('section, footer');
+            const navLinks = document.querySelectorAll('.nav-links li a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Trigger the highlight when the section is about 1/3 down the screen
+                    if (pageYOffset >= (sectionTop - window.innerHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                // Remove active class from all links, add to the current one
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
