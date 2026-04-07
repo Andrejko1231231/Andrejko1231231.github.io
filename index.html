@@ -27,11 +27,12 @@
             scroll-padding-top: 120px; 
         }
 
-        body {
+        html, body {
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* This hides horizontal scrollbars */
+            max-width: 100%;    /* This prevents the page from expanding */
             background-image: repeating-linear-gradient(90deg, transparent, transparent 15px, rgba(168, 85, 247, 0.05) 15px, rgba(168, 85, 247, 0.05) 16px);
         }
 
