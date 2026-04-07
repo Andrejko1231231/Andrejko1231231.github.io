@@ -571,6 +571,8 @@
             font-weight: 600;
             color: #fff;
             margin-top: 10px;
+            word-break: break-word; /* Add this line */
+            text-align: center;     /* Add this line */
         }
 
         .social-row {
@@ -600,17 +602,46 @@
         }
 
         /* --- Responsive Queries (Simplified) --- */
+/* --- Responsive Queries (Updated for Mobile) --- */
         @media (max-width: 900px) {
             .hero h1 { font-size: 3rem; }
             .section-header h2 { font-size: 2.5rem; }
+            /* Force services, pricing, and reviews to 1 column on tablets */
             .services-grid, .pricing-grid, .reviews-grid {
                 grid-template-columns: 1fr;
             }
+            /* Keep projects at 2 columns for tablets */
             .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .nav-container { padding: 10px; }
-            .nav-links { display: none; } /* Basic hides nav on mobile */
+            .nav-links { display: none; } 
+        }
+
+        /* NEW: Specific fixes for Phones */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            
+            /* Stack the buttons on top of each other and center them */
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .hero-btns .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Force Projects to 1 column so they are big and readable */
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Stack Email and Discord boxes so text isn't squished */
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .scroll-down {
             position: absolute;
